@@ -4,7 +4,8 @@ namespace Src\Models\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Usuario extends Model {
+class Usuario extends Model 
+{
     private $id;
     private $cod_usuario;
     private $username;
