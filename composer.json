@@ -1,0 +1,19 @@
+{
+    "name": "power/act1_sara_castellano_desarrollo_web_2025-1",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Sara Castellano"
+        }
+    ],
+    "require": {
+        "illuminate/database": "*",
+        "illuminate/support": "^12.7",
+        "illuminate/http": "^12.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Src\\": "src/"
+        }
+    }
+}
