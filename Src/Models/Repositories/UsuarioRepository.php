@@ -5,7 +5,7 @@ use Src\Models\Entities\Usuario;
 use Illuminate\Database\Eloquent\Model;
 
 
-class UsuarioRepository extends Model
+class UsuarioRepository
 {
     
     public function createUser(Usuario $usuario) {
@@ -15,8 +15,8 @@ class UsuarioRepository extends Model
         return $usuario;
     }
 
-    public function deleteUserCod($cod_usuario) {
-        $usuario = Usuario::where('cod_usuario', $cod_usuario)->first();
+    public function deleteUserCod($codigo_usuario) {
+        $usuario = Usuario::where('codigo_usuario', $codigo_usuario)->first();
         if ($usuario) {
             $usuario->delete();
             return true;
@@ -33,31 +33,33 @@ class UsuarioRepository extends Model
         return false;
     }
 
-    public function updateUser($cod_usuario, $data) {
-        $usuario = Usuario::where('cod_usuario',$cod_usuario);
+    public function updateUser($codigo_usuario, $data) {
+        $usuario = Usuario::where('codigo_usuario', $codigo_usuario)->first();
+    
         if ($usuario) {
             if (isset($data['username'])) {
-                $usuario->setUsername($data['username']);
+                $usuario->username = $data['username'];
             }
             if (isset($data['nombre'])) {
-                $usuario->setNombre($data['nombre']);
+                $usuario->nombre = $data['nombre'];
             }
             if (isset($data['email'])) {
-                $usuario->setEmail($data['email']);
+                $usuario->email = $data['email'];
             }
             if (isset($data['password'])) {
-                $usuario->setPassword(password_hash($data['password'], PASSWORD_BCRYPT));
+                $usuario->password = password_hash($data['password'], PASSWORD_BCRYPT);
             }
     
             $usuario->save();
             return $usuario;
         }
+    
         return null;
     }
 
 
-    public function getUserByCod($cod_usuario) {
-        return Usuario::where('cod_usuario', $cod_usuario)->first();
+    public function getUserByCod($codigo_usuario) {
+        return Usuario::where('codigo_usuario', $codigo_usuario)->first();
     }
 
     public function getUserByUsername($username) {
