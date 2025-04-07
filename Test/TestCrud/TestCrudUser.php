@@ -1,7 +1,6 @@
 <?php
-
-require_once 'vendor/autoload.php';
-require_once 'config/database.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../../config/database.php';
 
 use Src\Models\Entities\Usuario;
 use Src\Models\Repositories\UsuarioRepository;
@@ -16,7 +15,7 @@ $usuario = new Usuario([
     'rol' => 'vendedor'
 ]);
 
-//$repoUser->createUser($usuario);
+$repoUser->createUser($usuario);
 $data = [
     'username' => 'lili',
     'nombre' => 'lilian1',

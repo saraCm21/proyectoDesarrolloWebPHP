@@ -6,9 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class finca extends Model{
 
-    protected $table = 'finca';
+    protected $table = 'fincas';
     public $timestamps = false;  
-    protected $fillable = ['codigo_finca', 'nombre', 'numHectareas', 'metrosCuadrados', 'propietario_id', 'capataz_id', 'vededor_id', 'pais', 'departamento', 'ciudad', 'siProduceLeche', 'siProduceCereales', 'siProduceFrutas', 'siProduceVerduras'];
+    protected $primaryKey = 'id_finca';
+    protected $fillable = ['codigo_finca', 'nombre', 'numHectareas', 'metrosCuadrados', 'propietario_id', 'capataz_id', 'vendedor_id', 'pais', 'departamento', 'ciudad', 'siProduceLeche', 'siProduceCereales', 'siProduceFrutas', 'siProduceVerduras'];
    
 
     public function __construct(array $attributes = [])
