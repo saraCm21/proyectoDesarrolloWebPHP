@@ -14,6 +14,7 @@ Class ChangePassword
 
         if (!$usuario) {
             return false;
+            // recordar poner el mensaje de error de usuario no encontrado
         }
 
         $limit = Carbon::parse($usuario->time_limit);
@@ -22,8 +23,10 @@ Class ChangePassword
             $usuario->password = password_hash($password, PASSWORD_DEFAULT);
             $usuario->save();
             return true;
+            //recordar poner el mensaje de contraseña cambiada
         }
         
+        // recordar poner el mensaje de error de codigo incorrecto o tiempo expirado
     }
 }
 

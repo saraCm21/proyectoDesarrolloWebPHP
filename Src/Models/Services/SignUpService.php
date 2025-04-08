@@ -28,6 +28,8 @@ class SignUpService
                 'nombre'   => 'required|string|max:255',
                 'email'    => 'required|string|email|max:255',
                 'rol'      => 'required|string|max:255',
+                // recordar mejorara las validaciones para verificar que el rol sea valido, la contraseña sea 
+                //valida, el email sea valido y el unique, etc.
             ]
         );
 
