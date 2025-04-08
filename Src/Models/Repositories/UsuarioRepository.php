@@ -9,8 +9,7 @@ class UsuarioRepository
 {
     
     public function createUser(Usuario $usuario) {
-        
-        $usuario->password = password_hash($usuario->getPassword(), PASSWORD_BCRYPT);
+        $usuario->password = password_hash($usuario->password, PASSWORD_BCRYPT);
         $usuario->save();
         return $usuario;
     }
