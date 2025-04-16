@@ -30,22 +30,19 @@ class SignUpService
                 'rol'      => 'required|string|max:255',
                 // recordar mejorara las validaciones para verificar que el rol sea valido, la contraseña sea 
                 //valida, el email sea valido y el unique, etc.
+                // mandar el error de que el usuario ya existe, el email ya existe, etc.
+                // mandar error de que la contraseña no tiene 8 caractares
             ]
         );
 
-        if ($validator->fails()) {
-            return [
-                'status' => 422,
-                'errors' => $validator->errors(),
-            ];
+        $repoUser = new UsuarioRepository();
+        $resp = $repoUser->createUser($user);
+
+        if ($resp) {
+            return true;
+        }else {
+            return false;
         }
 
-        $repoUser = new UsuarioRepository();
-        $repoUser->createUser($user);
-
-        return [
-            'status' => 200,
-            'message' => 'User registered successfully',
-        ];
     }
 }

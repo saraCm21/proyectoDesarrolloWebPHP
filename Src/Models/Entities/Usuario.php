@@ -15,7 +15,7 @@ class Usuario extends Model
     {
         parent::__construct($attributes);
     }
-    
-    
+
+   
 }
 

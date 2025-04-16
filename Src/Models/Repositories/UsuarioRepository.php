@@ -11,7 +11,7 @@ class UsuarioRepository
     public function createUser(Usuario $usuario) {
         $usuario->password = password_hash($usuario->password, PASSWORD_BCRYPT);
         $usuario->save();
-        return $usuario;
+        return true;
     }
 
     public function deleteUserCod($codigo_usuario) {
@@ -67,6 +67,10 @@ class UsuarioRepository
 
     public function getUserByName ($nombre) {
         return Usuario::where('nombre', $nombre)->first();
+    }
+
+    public function getUserByEmail($email) {
+        return Usuario::where('email', $email)->first();
     }
 
     public function getAllUsers() {
