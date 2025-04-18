@@ -4,7 +4,8 @@ use Src\Models\Services\SignUpService;
 use Src\Models\Entities\Usuario;
 session_start();
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $signUpService = new SignUpService();   
     
     $email = $_POST['email'] ?? '';
     $username = $_POST['username'] ?? '';
@@ -25,14 +26,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'email' => $email,
         'rol' => $role
     ]);
-
-    echo $usuario->codigo_usuario . '<br>';
-    echo $usuario->username . '<br>';  
-    echo $usuario->password . '<br>';
-    echo $usuario->nombre . '<br>';
-    echo $usuario->email . '<br>';
-    echo $usuario->rol . '<br>';
-
     
     $signUpUser = new SignUpService();
     $signUpUser->validateAndRegisterUser($usuario);

@@ -1147,17 +1147,17 @@
         },
         {
             "name": "illuminate/database",
-            "version": "v12.7.2",
-            "version_normalized": "12.7.2.0",
+            "version": "v12.9.2",
+            "version_normalized": "12.9.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/database.git",
-                "reference": "f03c9825a2ec701a214762d2455a530ba854125d"
+                "reference": "baa39ce37d66f3b36c1d342d9283c385273a8067"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/database/zipball/f03c9825a2ec701a214762d2455a530ba854125d",
-                "reference": "f03c9825a2ec701a214762d2455a530ba854125d",
+                "url": "https://api.github.com/repos/illuminate/database/zipball/baa39ce37d66f3b36c1d342d9283c385273a8067",
+                "reference": "baa39ce37d66f3b36c1d342d9283c385273a8067",
                 "shasum": ""
             },
             "require": {
@@ -1177,10 +1177,11 @@
                 "illuminate/console": "Required to use the database commands (^12.0).",
                 "illuminate/events": "Required to use the observers with Eloquent (^12.0).",
                 "illuminate/filesystem": "Required to use the migrations (^12.0).",
+                "illuminate/http": "Required to convert Eloquent models to API resources (^12.0).",
                 "illuminate/pagination": "Required to paginate the result set (^12.0).",
                 "symfony/finder": "Required to use Eloquent model factories (^7.2)."
             },
-            "time": "2025-04-03T12:55:52+00:00",
+            "time": "2025-04-16T14:44:02+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {

@@ -13,13 +13,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($esValido) {
         $_SESSION['username'] = $username;
-        header('Location: dashboard.php'); // Redirigir la siguiente página después de iniciar sesión
-        exit;
+        header('Location: ../../Views/principalFrames/homeFrame.php');
     } else {
-        header('Location: ../../Views/loginFrame/loginFrame.html?error=login_failed');
+        header('Location: ../../Views/loginFrames/loginFrame.html?error=login_failed');
     }
 }else {
-    header('Location: login.php');
+    header('Location: loginFrame.php');
     exit;
 }
 ?>

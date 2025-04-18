@@ -7,7 +7,7 @@
         }
     ],
     "require": {
-        "illuminate/database": "^12.7",
+        "illuminate/database": "^12.9",
         "illuminate/support": "^12.7",
         "illuminate/http": "^12.7",
         "illuminate/translation": "^12.7",
