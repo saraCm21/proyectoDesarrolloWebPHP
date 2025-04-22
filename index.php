@@ -9,6 +9,8 @@ use Src\Models\Services\SignUpService;
 use Src\Models\Services\LoginService;
 use Src\Models\Services\SendEmail;
 use Src\Models\Services\ChangePassword;
+use Src\Models\Services\SearchFinca;
+
 /*
 
 $usuario = new Usuario([
@@ -38,7 +40,7 @@ echo $serndEmail->sendEmail('sasacm0610@gmail.com');
 
 $changePas = new ChangePassword();
 echo $changePas->changePassword('599064', 'sari123', 'sasacm0610@gmail.com');
-*/
+
 
 $propietario = Usuario::where('codigo_usuario', 889180)->first();
 $capataz = Usuario::where('codigo_usuario', "SaraC")->first();
@@ -50,5 +52,11 @@ $vendedor_id = $vendedor->id_usuario;
 echo $propietario_id . '<br>';
 echo $capataz_id . '<br>';
 echo $vendedor_id . '<br>';
+*/
+
+$buscar = new SearchFinca();
+$finca = $buscar->searchFinca('173716');
+echo $finca;
+
 
 ?>
