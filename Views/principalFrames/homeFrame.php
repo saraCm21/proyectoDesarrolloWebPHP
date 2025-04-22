@@ -11,9 +11,9 @@
     <aside class="sidebar">
       <h2>MENU</h2>
       <nav>
-        <a href="registerFinca.html">&#x2696; CREAR FINCA</a>
-        <a href="#">&#x1F4C8; REPORTE</a>
-        <a href="../../Controllers/logoutController.php">&#x1F6AA; SALIR</a>
+        <a href="registerFinca.html">&#x2696; Crear Finca</a>
+        <a href="../../Views/principalFrames/reportFinca.html">📄 Reporte</a>
+        <a href="../../Controllers/logoutController.php">&#x1F6AA; Salir</a>
       </nav>
     </aside>
 
